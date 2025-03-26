@@ -1,0 +1,25 @@
+[build]
+  # Define the directory where the site will be built
+  publish = "public"
+  # Define the build command
+  command = "npm run build"
+
+[context.production.environment]
+  # Define environment variables for production
+  NODE_ENV = "production"
+
+[context.deploy-preview.environment]
+  # Define environment variables for deploy previews
+  NODE_ENV = "development"
+
+[[redirects]]
+  # Redirect from /old-url to /new-url
+  from = "/old-url"
+  to = "/new-url"
+  status = 301
+
+[[headers]]
+  # Add custom headers for all pages
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
