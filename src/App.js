@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+export default function App() {
   return (
-    <>
-    hiii</>
+    <div>
+      hello jithin
+      <p>hi job</p>
+      <p>hi job</p>
+      <p>hi job</p>
+      <p>hi job</p>
+    </div>
   );
 }
-
-export default App;
