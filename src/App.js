@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function App(){
   return (
-    <div>App</div>
+    <div>hello jithin
+      <p>hi job</p>
+    </div>
   )
 }
