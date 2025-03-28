@@ -131,19 +131,19 @@ export const Login = () => {
                         Gmail
                       </button>
 
-                      {/* <button
-                      style={{
-                        borderRadius: "25px",
-                        width: "48%",
-                        height: "60%",
-                        marginTop: "-5px",
+                      <button
+                        style={{
+                          borderRadius: "25px",
+                          width: "48%",
+                          height: "60%",
+                          marginTop: "-5px",
 
-                        // marginTop: "auto",
-                        border: "1px solid black",
-                      }}
-                    >
-                      Google
-                    </button> */}
+                          // marginTop: "auto",
+                          border: "1px solid black",
+                        }}
+                      >
+                        Google
+                      </button>
                     </div>
                   </div>
                 </div>
