@@ -1,0 +1,88 @@
+.align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .row {
+    flex-direction: row;
+  }
+  
+  .col {
+    flex-direction: column;
+  }
+  input::placeholder{
+    color:rgb(223, 218, 218)
+  }
+  
+  .login-main {
+    display: flex;
+    height: 100dvh;
+    background-color: #a0a5b0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-main .pop {
+    display: flex;
+    width: 75%;
+    height: 75%;
+    border-radius: 35px;
+    background: linear-gradient(135deg, #e2e3e7 30%, #f6e6c3);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pop .pad {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 90%;
+  
+    /* background-color: bisque; */
+  }
+  
+  .pad .left-pop {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    /* background-color: aquamarine; */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left-pop .log {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    /* background-color: rgb(240, 159, 54); */
+  }
+  
+  .log .inp-box {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .inp-box .inp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(124, 219, 35); */
+  
+  
+  }
+  
+  .pad .right-pop {
+    display: flex;
+    width: 55%;
+    border-radius: 30px;
+    background-color: rgb(233, 236, 230);
+  
+  }

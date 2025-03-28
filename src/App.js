@@ -1,14 +1,10 @@
 import React from "react";
+import { Login } from "./pages/login";
 
 export default function App() {
   return (
-    <div>
-      hello jithin
-      <p>hi job</p>
-      <p>hi job</p>
-      <p>hi job</p>
-      <p>hi job</p>
-      <p>sreedarsh</p>
-    </div>
+    <>
+    <Login/>
+    </>
   );
 }
