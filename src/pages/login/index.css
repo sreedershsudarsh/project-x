@@ -3,7 +3,12 @@
     align-items: center;
     justify-content: center;
   }
-  
+  .display{
+    display: flex;
+  }
+  .display-non{
+    display: none;
+  }
   .row {
     flex-direction: row;
   }
@@ -34,7 +39,6 @@
   }
   
   .pop .pad {
-    display: flex;
     flex-direction: row;
     width: 90%;
     height: 90%;

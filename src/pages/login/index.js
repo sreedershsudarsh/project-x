@@ -1,11 +1,15 @@
 import React from "react";
 import "./index.css";
 export const Login = () => {
+  const width = window.innerWidth;
+
   return (
     <>
       <div className="login-main">
         <div className="pop">
-          <div className="pad">
+          {width > 1000 ? undefined : <h1>Sorry only view in laptop</h1>}
+
+          <div className={`pad ${width > 1000 ? "display" : "display-non"}`}>
             <div className="left-pop">
               <div className="log">
                 <div className="align col">
