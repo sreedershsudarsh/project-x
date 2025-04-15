@@ -44,9 +44,14 @@ export const Dashboard=()=> {
       time: "5:30 pm to 7:30 pm",
     },
   ];
+  const width = window.innerWidth;
 
   return (
     <>
+    {width <700 ? undefined : <h1>Sorry only view in mobile</h1>}
+
+    <div className={`${width>700?"display":undefined}`}>
+
       <div className="header">
       <div >
         {/* <img src={require('./assets/ChatGPT Image Apr 15, 2025, 05_13_35 PM.png')}style={{width:"30px",}}/> */}
@@ -97,6 +102,7 @@ export const Dashboard=()=> {
        <h6>   Admin</h6>
         </div>
       </div>
+    </div>
     </>
   );
 }
