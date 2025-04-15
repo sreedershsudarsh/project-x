@@ -1,7 +1,9 @@
 import React from "react";
 import "./index.css";
+import { routerStore } from "../store";
 export const Login = () => {
   const width = window.innerWidth;
+console.log(routerStore,"dddd");
 
   return (
     <>

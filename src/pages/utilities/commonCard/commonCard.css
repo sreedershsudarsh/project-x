@@ -1,0 +1,41 @@
+.card {
+    width: 90%;
+    height: 120px;
+    /* background-color:rgb(252, 140, 140); */
+    display: flex;
+    padding: 5%;
+}
+
+.card-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: white;
+    border-left: 5px solid;
+    border-color: rgb(104, 216, 214);
+    border-radius: 8px;
+    box-shadow: 0 0 6px 0 #003c7129;
+    padding: 0px 15px;
+
+}
+.price {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #16a34a; /* green-600 */
+  }
+  .name{
+    color: #003c71;
+    font-size: 15px;
+    font-weight: 650;
+  }
+  .day-time{
+    font-size: 12px;
+    color: grey;
+  }
+  .dat-time-sub{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+  }
