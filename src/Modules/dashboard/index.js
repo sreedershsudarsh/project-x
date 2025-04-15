@@ -6,7 +6,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
 import { Card } from "../../pages/utilities/commonCard";
-export const Dashboard=()=> {
+export const Dashboard = () => {
   const data = [
     {
       head: "🍃 Archana",
@@ -43,67 +43,72 @@ export const Dashboard=()=> {
       days: "Monday,Saturday",
       time: "5:30 pm to 7:30 pm",
     },
+    {
+      head: "🪔  Neyvilak",
+      price: "30",
+      lord: "Krishna",
+      days: "Monday - Sunday",
+      time: "5:30 am to 10:30 am",
+    },
   ];
   const width = window.innerWidth;
 
   return (
     <>
-    {width <700 ? undefined : <h1>Sorry only view in mobile</h1>}
+      {width < 700 ? undefined : <h1>Poyi mobileil nokku... sry </h1>}
 
-    <div className={`${width>700?"display":undefined}`}>
-
-      <div className="header">
-      <div >
-        {/* <img src={require('./assets/ChatGPT Image Apr 15, 2025, 05_13_35 PM.png')}style={{width:"30px",}}/> */}
-      
-</div>        <div className="search-head">
-          <SearchIcon style={{ color: "grey", marginLeft: "10px" }} />
-          <input
-            style={{
-              marginLeft: "10px",
-              width: "75%",
-              border: "none",
-              outline: "none",
-            }}
-            placeholder="Search"
-          />
+      <div className={`${width > 700 ? "display" : undefined}`}>
+        <div className="header">
+          <div>
+            {/* <img src={require('./assets/ChatGPT Image Apr 15, 2025, 05_13_35 PM.png')}style={{width:"30px",}}/> */}
+          </div>{" "}
+          <div className="search-head">
+            <SearchIcon style={{ color: "grey", marginLeft: "10px" }} />
+            <input
+              style={{
+                marginLeft: "10px",
+                width: "75%",
+                border: "none",
+                outline: "none",
+              }}
+              placeholder="Search"
+            />
+          </div>
+          <div>
+            <MenuIcon />
+          </div>
         </div>
-        <div>
-          <MenuIcon />
+        <div className="main">
+          {data.map((detail) => (
+            <Card
+              head={detail.head}
+              price={detail.price}
+              lord={detail.lord}
+              days={detail.days}
+              time={detail.time}
+            />
+          ))}
+        </div>
+        <div className="footer">
+          <div className="footer-align">
+            <SelfImprovementIcon />
+            <h6>Home</h6>
+          </div>
+
+          <div className="footer-align">
+            <AccountCircleIcon />
+            <h6> Priest</h6>
+          </div>
+          <div className="footer-align">
+            <AccountBalanceIcon />
+            <h6>Account</h6>
+          </div>
+          <div className="footer-align">
+            <AdminPanelSettingsIcon />
+            <h6> Admin</h6>
+          </div>
         </div>
       </div>
-      <div className="main">
-        {data.map((detail) => (
-          <Card
-            head={detail.head}
-            price={detail.price}
-            lord={detail.lord}
-            days={detail.days}
-            time={detail.time}
-          />
-        ))}
-      </div>
-      <div className="footer">
-        <div className="footer-align">
-          <SelfImprovementIcon />
-         <h6>Home</h6> 
-        </div>
-
-        <div className="footer-align">
-          <AccountCircleIcon />
-         <h6> Priest</h6>
-        </div>
-        <div className="footer-align">
-          <AccountBalanceIcon />
-          <h6>Account</h6>
-        </div>
-        <div className="footer-align">
-          <AdminPanelSettingsIcon />
-       <h6>   Admin</h6>
-        </div>
-      </div>
-    </div>
     </>
   );
-}
-
+};
