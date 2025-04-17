@@ -63,7 +63,7 @@ export const Dashboard = () => {
       <div className={`${width > 700 ? "display" : undefined}`}>
         <div className="header">
           <div>
-            <img src={require('/Users/sreedershsudarsh/Desktop/college-management-project-x/src/assets/image.png')}style={{width:"48px",marginTop:"8px"}}/>
+            {/* <img src={require('./commonComponent/')}style={{width:"48px",marginTop:"8px"}}/> */}
           </div>{" "}
         <Search/>
           <div>
