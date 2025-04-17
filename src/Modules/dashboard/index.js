@@ -1,12 +1,15 @@
 import "./index.css";
-import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
-import { Card } from "../../pages/utilities/commonCard";
+import { Card } from "../../commonComponent/common-Card";
+import { Form } from "../../commonComponent/common-Form";
+import { AddNew, Search } from "../../commonComponent/common-icon";
+import { Footer } from "../../commonComponent/Footer";
+import { useState } from "react";
 export const Dashboard = () => {
+  const[formOpen,setFormOpen]=useState(false)
+  const handleAdd=()=>{
+    setFormOpen(prev=>!prev)
+  }
   const data = [
     {
       head: "🍃 Archana",
@@ -60,54 +63,31 @@ export const Dashboard = () => {
       <div className={`${width > 700 ? "display" : undefined}`}>
         <div className="header">
           <div>
-            {/* <img src={require('./assets/ChatGPT Image Apr 15, 2025, 05_13_35 PM.png')}style={{width:"30px",}}/> */}
+            <img src={require('/Users/sreedershsudarsh/Desktop/college-management-project-x/src/assets/image.png')}style={{width:"48px",marginTop:"8px"}}/>
           </div>{" "}
-          <div className="search-head">
-            <SearchIcon style={{ color: "grey", marginLeft: "10px" }} />
-            <input
-              style={{
-                marginLeft: "10px",
-                width: "75%",
-                border: "none",
-                outline: "none",
-              }}
-              placeholder="Search"
-            />
-          </div>
+        <Search/>
           <div>
             <MenuIcon />
           </div>
         </div>
         <div className="main">
-          {data.map((detail) => (
-            <Card
-              head={detail.head}
-              price={detail.price}
-              lord={detail.lord}
-              days={detail.days}
-              time={detail.time}
-            />
-          ))}
-        </div>
-        <div className="footer">
-          <div className="footer-align">
-            <SelfImprovementIcon />
-            <h6>Home</h6>
-          </div>
-
-          <div className="footer-align">
-            <AccountCircleIcon />
-            <h6> Priest</h6>
-          </div>
-          <div className="footer-align">
-            <AccountBalanceIcon />
-            <h6>Account</h6>
-          </div>
-          <div className="footer-align">
-            <AdminPanelSettingsIcon />
-            <h6> Admin</h6>
-          </div>
-        </div>
+        {data.map((detail) => (
+          <Card
+            head={detail.head}
+            price={detail.price}
+            lord={detail.lord}
+            days={detail.days}
+            time={detail.time}
+            actiondropdown={[
+              { title: "Edit", id: "1" },
+              { title: "Delete", id: "2" },
+            ]}
+          />
+        ))}
+        <Form open={formOpen} handleAdd={handleAdd}/>
+        <AddNew handleAdd={handleAdd}/>
+      </div>
+    <Footer/>
       </div>
     </>
   );
