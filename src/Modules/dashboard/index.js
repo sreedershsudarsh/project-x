@@ -5,11 +5,13 @@ import { Form } from "../../commonComponent/common-Form";
 import { AddNew, Search } from "../../commonComponent/common-icon";
 import { Footer } from "../../commonComponent/Footer";
 import { useState } from "react";
+import myImage from "/Users/sreedershsudarsh/Desktop/college-management-project-x/src/commonComponent/assets/image.png";
+
 export const Dashboard = () => {
-  const[formOpen,setFormOpen]=useState(false)
-  const handleAdd=()=>{
-    setFormOpen(prev=>!prev)
-  }
+  const [formOpen, setFormOpen] = useState(false);
+  const handleAdd = () => {
+    setFormOpen((prev) => !prev);
+  };
   const data = [
     {
       head: "🍃 Archana",
@@ -63,31 +65,31 @@ export const Dashboard = () => {
       <div className={`${width > 700 ? "display" : undefined}`}>
         <div className="header">
           <div>
-            {/* <img src={require('./commonComponent/')}style={{width:"48px",marginTop:"8px"}}/> */}
+            <img src={myImage} alt="Dashboard" />
           </div>{" "}
-        <Search/>
+          <Search />
           <div>
             <MenuIcon />
           </div>
         </div>
         <div className="main">
-        {data.map((detail) => (
-          <Card
-            head={detail.head}
-            price={detail.price}
-            lord={detail.lord}
-            days={detail.days}
-            time={detail.time}
-            actiondropdown={[
-              { title: "Edit", id: "1" },
-              { title: "Delete", id: "2" },
-            ]}
-          />
-        ))}
-        <Form open={formOpen} handleAdd={handleAdd}/>
-        <AddNew handleAdd={handleAdd}/>
-      </div>
-    <Footer/>
+          {data.map((detail) => (
+            <Card
+              head={detail.head}
+              price={detail.price}
+              lord={detail.lord}
+              days={detail.days}
+              time={detail.time}
+              actiondropdown={[
+                { title: "Edit", id: "1" },
+                { title: "Delete", id: "2" },
+              ]}
+            />
+          ))}
+          <Form open={formOpen} handleAdd={handleAdd} />
+          <AddNew handleAdd={handleAdd} />
+        </div>
+        <Footer />
       </div>
     </>
   );
