@@ -9,7 +9,7 @@ export const AddNew = ({handleAdd}) => {
     </div>
   );
 };
-export const Details = ({actiondropdown}) => {
+export const Details = ({actiondropdown,handleAction,id}) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -19,7 +19,7 @@ export const Details = ({actiondropdown}) => {
           {open && (
             <div className="dropdown-content">
               {actiondropdown.map((item) => (
-                <p
+                <p onClick={()=>handleAction(item.title,id)}
                   key={item.id}
                   style={{ color: item.id === '2' ? 'red' : 'black' ,fontWeight:600}}
                 >

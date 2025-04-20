@@ -1,7 +1,7 @@
 import React from "react";
 import './index.css'
 import { Details } from "../common-icon";
-export const Card = ({head,price,lord,days,time,actiondropdown}) => {    
+export const Card = ({id,head,price,lord,days,time,actiondropdown,handleAction}) => {    
     return (
       <div className="card">
         <div className="card-box">
@@ -19,7 +19,7 @@ export const Card = ({head,price,lord,days,time,actiondropdown}) => {
             <h3>{head} </h3>
             <span class="price">₹{price}</span>
             <div >
-            <Details actiondropdown={actiondropdown}/></div>
+            <Details actiondropdown={actiondropdown} handleAction={handleAction}id={id}/></div>
           </div>
           <div
             style={{ width: "100%", height: "1px", backgroundColor: "grey" }}
