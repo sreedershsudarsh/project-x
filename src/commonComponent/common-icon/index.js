@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 export const AddNew = ({handleAdd}) => {
   return (
     <div onClick={handleAdd} className="new">
-      <div style={{color:"white",fontSize:"24px",fontWeight:"650",marginTop:"-3px"}}> +</div>
+      <div style={{color:"white",fontSize:"24px",fontWeight:"650"}}> +</div>
     </div>
   );
 };
@@ -21,7 +21,7 @@ export const Details = ({actiondropdown}) => {
               {actiondropdown.map((item) => (
                 <p
                   key={item.id}
-                  style={{ color: item.id === '2' ? 'red' : 'black' }}
+                  style={{ color: item.id === '2' ? 'red' : 'black' ,fontWeight:600}}
                 >
                   {item.title}
                 </p>

@@ -5,7 +5,6 @@ import { Form } from "../../commonComponent/common-Form";
 import { AddNew, Search } from "../../commonComponent/common-icon";
 import { Footer } from "../../commonComponent/Footer";
 import { useState } from "react";
-import myImage from "/Users/sreedershsudarsh/Desktop/college-management-project-x/src/commonComponent/assets/image.png";
 
 export const Dashboard = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -65,7 +64,7 @@ export const Dashboard = () => {
       <div className={`${width > 700 ? "display" : undefined}`}>
         <div className="header">
           <div>
-            <img src={myImage} alt="Dashboard" />
+            <img style={{width:"50px",marginTop:"10px"}} src={require('../../commonComponent/images/dashboard.png')} alt="Dashboard" />
           </div>{" "}
           <Search />
           <div>
