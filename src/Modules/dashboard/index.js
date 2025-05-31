@@ -4,63 +4,36 @@ import { Card } from "../../commonComponent/common-Card";
 import { Form } from "../../commonComponent/common-Form";
 import { AddNew, Search } from "../../commonComponent/common-icon";
 import { Footer } from "../../commonComponent/Footer";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { GetUser } from "./api";
+import { PostUser } from "./api";
 export const Dashboard = () => {
   const [formOpen, setFormOpen] = useState(false);
+  const [perData, perSetData] = useState([]);
+  const [createData, setCreateData] = useState({});
+
   const handleAdd = () => {
     setFormOpen((prev) => !prev);
   };
-  const [perData, perSetData] = useState([
-    {
-      id: "1",
-      head: "🍃 Archana",
-      price: "15",
-      lord: "Shiva",
-      days: "Thursday,Saturday",
-      time: "5:30 am to 10:30 am",
-    },
-    {
-      id: "2",
-      head: "🥥 Neeranjanam",
-      price: "30",
-      lord: "Shiva",
-      days: "Friday,Saturday",
-      time: "5:30 am to 10:30 am",
-    },
-    {
-      id: "3",
-      head: "🔥 Ganapathi homam",
-      price: "500",
-      lord: "Ganapathi",
-      days: "Monday,Saturday",
-      time: "5:30 am to 10:30 am",
-    },
-    {
-      id: "4",
-      head: "🌸 Pushpabishekam",
-      price: "350",
-      lord: "Shiva",
-      days: "Wednesday,Saturday",
-      time: "5:30 am to 10:30 am",
-    },
-    {
-      id: "5",
-      head: "🍌 Nivedhyam",
-      price: "50",
-      lord: "Krishna",
-      days: "Monday,Saturday",
-      time: "5:30 pm to 7:30 pm",
-    },
-    {
-      id: "6",
-      head: "🪔  Neyvilak",
-      price: "30",
-      lord: "Krishna",
-      days: "Monday - Sunday",
-      time: "5:30 am to 10:30 am",
-    },
-  ]);
+  useEffect(() => {
+    getdata();
+  }, []);
+
+  useEffect(() => {
+    if (createData && Object.keys(createData).length > 0) {
+      Postdata(createData);
+    }
+  }, [createData]);
+
+  const Postdata = (createData) => {
+    PostUser(createData);
+  };
+  const getdata = () => {
+    GetUser().then((response) => {
+      perSetData(response);
+    });
+  };
+
   const width = window.innerWidth;
   const handleAction = (key, id) => {
     if (key === "Edit") {
@@ -105,8 +78,9 @@ export const Dashboard = () => {
           <Form
             open={formOpen}
             handleAdd={handleAdd}
-            perSetData={perSetData}
+            perSetData={setCreateData}
             perData={perData}
+            // handleSubmit={handleSubmit}
           />
           <AddNew handleAdd={handleAdd} />
         </div>

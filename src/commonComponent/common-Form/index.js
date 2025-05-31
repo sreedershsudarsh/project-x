@@ -1,18 +1,26 @@
 import { useState } from "react";
 import "./index.css";
-export const Form = ({ open, handleAdd,perSetData ,perData}) => {
-  const [data, setData] =
-    useState({id:"", head: "", price: "", lord: "", days: "", time: "" });
+export const Form = ({ open, handleAdd, perSetData }) => {
+  const [data, setData] = useState({
+    head: "",
+    price: "",
+    lord: "",
+    days: "",
+    time: "",
+  });
   const handleChange = (value, key) => {
-    let temp = {...data};
+    let temp = { ...data };
     temp[key] = value;
-    setData(temp)
+    setData(temp);
   };
-  const handleSave=()=>{
-    const newData = { ...data, id: String(perData.length + 1) };
-    perSetData(prev => [...prev, newData]);    handleAdd()
-
-  }
+  const handleSave = () => {
+    const newData = {
+      ...data,
+      // , id: String(perData.length + 1)
+    };
+    perSetData(newData);
+    handleAdd();
+  };
   return (
     <>
       {open ? (
@@ -65,7 +73,9 @@ export const Form = ({ open, handleAdd,perSetData ,perData}) => {
                   <button onClick={handleAdd} className="close-clr">
                     Close
                   </button>
-                  <button onClick={handleSave} className="save-clr">Save</button>
+                  <button onClick={handleSave} className="save-clr">
+                    Save
+                  </button>
                 </div>
               </div>
             </div>
