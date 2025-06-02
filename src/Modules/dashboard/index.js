@@ -1,12 +1,12 @@
 import "./index.css";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Card } from "../../commonComponent/common-Card";
 import { Form } from "../../commonComponent/common-Form";
-import { AddNew, Search } from "../../commonComponent/common-icon";
+import { AddNew } from "../../commonComponent/common-icon";
 import { Footer } from "../../commonComponent/Footer";
 import { useEffect, useState } from "react";
 import { GetUser } from "./api";
 import { PostUser } from "./api";
+import { Header } from "./header";
 export const Dashboard = () => {
   const [formOpen, setFormOpen] = useState(false);
   const [perData, perSetData] = useState([]);
@@ -41,24 +41,14 @@ export const Dashboard = () => {
       perSetData((prev) => prev.filter((item) => item.id !== id));
     }
   };
+
   return (
     <>
       {width < 700 ? undefined : <h1>Poyi mobileil nokku... sry </h1>}
 
       <div className={`${width > 700 ? "display" : undefined}`}>
-        <div className="header">
-          <div>
-            <img
-              style={{ width: "50px", marginTop: "10px" }}
-              src={require("../../commonComponent/images/dashboard.png")}
-              alt="Dashboard"
-            />
-          </div>{" "}
-          <Search />
-          <div>
-            <MenuIcon />
-          </div>
-        </div>
+        <Header />
+
         <div className="main">
           {perData.map((detail) => (
             <Card

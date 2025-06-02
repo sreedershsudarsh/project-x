@@ -19,7 +19,7 @@ export const Card = ({id,head,price,lord,days,time,actiondropdown,handleAction})
             <h3>{head} </h3>
             <span class="price">₹{price}</span>
             <div >
-            <Details actiondropdown={actiondropdown} handleAction={handleAction}id={id}/></div>
+            <Details actiondropdown={actiondropdown} handleAction={handleAction}id={id} icon={"⋮"}/></div>
           </div>
           <div
             style={{ width: "100%", height: "1px", backgroundColor: "grey" }}
