@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Details, Search } from "../../../commonComponent/common-icon";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../../dashboard/index.css";
+import { Login } from "../../login";
 
 export const Header = () => {
-  const handleLogin = () => {};
+    const [login,setLogin]=useState(false);
+  const handleLogin = () => {
+    setLogin(true)
+  };
+  const handleClose = () => {
+    setLogin(false)
+  };
   return (
     <>
       <div className="header">
@@ -24,6 +31,10 @@ export const Header = () => {
           />
         </div>
       </div>
+      <Login
+      open={login}
+      close={handleClose}
+      />
     </>
   );
 };

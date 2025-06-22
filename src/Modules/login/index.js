@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Login = () => {
+export const Login = ({open,close}) => {
   return (
-    <div>index</div>
+    <>
+    
+    </>
   )
 }
