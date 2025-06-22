@@ -15,7 +15,9 @@ export const AddNew = ({ handleAdd }) => {
 export const Details = ({ actiondropdown, handleAction, id ,icon}) => {
   const [open, setOpen] = useState(false);
   const divRef = useRef(null);
-
+const handleclose=()=>{
+  setOpen(false)
+}
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (divRef.current && !divRef.current.contains(event.target)) {
@@ -39,8 +41,11 @@ export const Details = ({ actiondropdown, handleAction, id ,icon}) => {
           <div className="dropdown-content">
             {actiondropdown.map((item) => (
               <p
-                onClick={() => handleAction(item.title, id)}
-                key={item.id}
+              onClick={() => {
+                handleAction(item.title, id);
+                handleclose();
+              }}
+                              key={item.id}
                 style={{
                   color: item.id === "2" ? "red" : "black",
                   fontWeight: 600,
